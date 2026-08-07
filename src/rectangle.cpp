@@ -1,5 +1,8 @@
 #include "rectangle.hpp"
 
+namespace figures
+{
+
 Rectangle::Rectangle(Vector2 position, Vector2 newSize, Color color)
     :Shape(position, color)
     ,size(newSize)
@@ -9,4 +12,6 @@ Rectangle::Rectangle(Vector2 position, Vector2 newSize, Color color)
 void Rectangle::draw() const
 {
     DrawRectangleV(position, size, color);
+}
+
 }

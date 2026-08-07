@@ -3,6 +3,8 @@
 #include <vector>
 #include "raylib.h"
 
+namespace figures
+{
 
 class Canvas
 {
@@ -15,3 +17,5 @@ public:
 private:
     std::vector<Vector2> coordinates;
 };
+
+}

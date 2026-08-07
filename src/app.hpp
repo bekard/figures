@@ -5,6 +5,9 @@
 #include "canvas.hpp"
 #include "color_panel.hpp"
 
+namespace figures
+{
+
 class App
 {
 public:
@@ -15,7 +18,7 @@ public:
 
 private:
     void update();
-    void render();
+    void render();  
 
     Canvas canvas;
     ColorPanel colorPanel;
@@ -28,3 +31,5 @@ private:
 
     Settings settings;
 };
+
+}

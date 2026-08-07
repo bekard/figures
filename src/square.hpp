@@ -2,6 +2,9 @@
 
 #include "shape.hpp"
 
+namespace figures
+{
+
 class Square : public Shape
 {
     Square(Vector2 position, float size, Color color);
@@ -12,3 +15,5 @@ class Square : public Shape
 private:
     Vector2 size;
 };
+
+}

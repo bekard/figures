@@ -3,6 +3,9 @@
 
 #include "app.hpp"
 
+namespace figures
+{
+
 App::App(int screenWidth, int screenHeight)
 {
     InitWindow(screenWidth, screenHeight, "figures");
@@ -51,4 +54,6 @@ void App::render()
         ClearBackground(RAYWHITE);
         canvas.draw();
     EndDrawing();
+}
+
 }

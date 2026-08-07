@@ -2,6 +2,9 @@
 
 #include "raylib.h"
 
+namespace figures
+{
+
 enum class ShapeType
 {
     Circle, Square, Rectangle, Triangle
@@ -19,3 +22,5 @@ protected:
     Vector2 position;
     Color color;
 };
+
+}

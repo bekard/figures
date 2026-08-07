@@ -6,6 +6,9 @@
 #include <array>
 #include <string>
 
+namespace figures
+{
+
 ColorPanel::ColorPanel()
 {
     constexpr int WIDTH = 70;
@@ -38,4 +41,6 @@ std::optional<Color> ColorPanel::update()
     }
 
     return std::nullopt;
+}
+
 }

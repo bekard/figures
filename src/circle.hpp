@@ -2,6 +2,9 @@
 
 #include "shape.hpp"
 
+namespace figures
+{
+
 class Circle : public Shape
 {
     Circle(Vector2 position, float radius, Color color);
@@ -12,3 +15,5 @@ class Circle : public Shape
 private:
     float radius;
 };
+
+}

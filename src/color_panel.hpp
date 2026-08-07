@@ -6,6 +6,9 @@
 
 #include "raylib.h"
 
+namespace figures
+{
+
 class ColorPanel
 {
 public:
@@ -25,3 +28,5 @@ private:
 
     std::vector<Button> buttons;
 };
+
+}
