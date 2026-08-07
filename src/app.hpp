@@ -1,5 +1,7 @@
 #pragma once
 
+#include "raylib.h"
+
 #include "canvas.hpp"
 #include "color_panel.hpp"
 
