@@ -1,6 +1,7 @@
 #pragma once
 
 #include "canvas.hpp"
+#include "color_panel.hpp"
 
 class App
 {
@@ -15,5 +16,13 @@ private:
     void render();
 
     Canvas canvas;
-    // Menu menu;
+    ColorPanel colorPanel;
+
+    struct Settings
+    {
+        Color color = BLACK;
+        // Shape shape;
+    };
+
+    Settings settings;
 };

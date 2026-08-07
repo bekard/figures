@@ -1,5 +1,5 @@
 #include "raylib.h"
-#include <iostream>
+#include "raygui.hpp"
 
 #include "app.hpp"
 
@@ -7,6 +7,7 @@ App::App(int screenWidth, int screenHeight)
 {
     InitWindow(screenWidth, screenHeight, "figures");
     SetTargetFPS(60);
+    GuiSetStyle(DEFAULT, TEXT_SIZE, 15);
 }
 
 App::~App()
@@ -25,7 +26,19 @@ void App::run()
 
 void App::update()
 {
-    if(IsMouseButtonPressed(MOUSE_BUTTON_LEFT))
+    if(std::optional<Color> newColor = colorPanel.update())
+    {
+        settings.color = *newColor;
+        return;
+    }
+
+    // if(std::optional<Shape> newShape = shapePanel.update())
+    // {
+    //     settings.shape = *newShape;
+    //     return;
+    // }
+
+    if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
     {
         Vector2 pos = GetMousePosition();
         canvas.add(pos);
