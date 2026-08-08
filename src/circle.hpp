@@ -7,6 +7,7 @@ namespace figures
 
 class Circle : public Shape
 {
+public:
     Circle(Vector2 position, float radius, Color color);
     ~Circle() override = default;
 

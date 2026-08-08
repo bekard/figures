@@ -7,12 +7,13 @@ namespace figures
 
 class Rectangle : public Shape
 {
+public:
     Rectangle(Vector2 position, Vector2 size, Color color);
-    ~Rectangle() override = default;
+    virtual ~Rectangle() override = default;
 
-    void draw() const override;
+    virtual void draw() const override;
 
-private:
+protected:
     Vector2 size;
 };
 

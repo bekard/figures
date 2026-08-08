@@ -1,19 +1,15 @@
 #pragma once
 
-#include "shape.hpp"
+#include "rectangle.hpp"
 
 namespace figures
 {
 
-class Square : public Shape
+class Square : public Rectangle
 {
-    Square(Vector2 position, float size, Color color);
+public:
+    Square(Vector2 position, float sideLength, Color color);
     ~Square() override = default;
-
-    void draw() const override;
-
-private:
-    Vector2 size;
 };
 
 }
