@@ -9,38 +9,23 @@
 namespace figures
 {
 
-ColorPanel::ColorPanel()
+ColorPanel::ColorPanel(Vector2 position)
 {
-    constexpr int WIDTH = 70;
-    constexpr int HEIGHT = 30;
-    constexpr size_t SIZE = 5;
-
-    constexpr std::array<Color, SIZE> colors{ BLUE, ORANGE, RED, GREEN, YELLOW };
-    constexpr std::array<std::string_view, SIZE> names{ "blue", "orange", "red", "green", "yellow" };
-
-    const float x = 0;
-    float y = 0;
-
-    for(size_t i = 0; i < SIZE; i++)
+    static const std::vector<std::pair<std::string, Color>> namesAndColors
     {
-        Rectangle bounds{x, y, WIDTH, HEIGHT};
-        buttons.emplace_back(bounds, std::string(names[i]), colors[i]);
+        {"blue", BLUE},
+        {"orange", ORANGE},
+        {"red", RED},
+        {"green", GREEN},
+        {"yellow", YELLOW},
+    };
 
-        y += HEIGHT;
-    }
+    buttons = ButtonPanel<Color>(namesAndColors, position);
 }
 
-std::optional<Color> ColorPanel::update()
+std::optional<Color> ColorPanel::update() const
 {
-    for(const Button& button : buttons)
-    {
-        if(GuiButton(button.bounds, button.name.c_str()))
-        {
-            return button.color;
-        }
-    }
-
-    return std::nullopt;
+    return buttons.update();
 }
 
 }

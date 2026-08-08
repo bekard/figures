@@ -6,27 +6,19 @@
 
 #include "raylib.h"
 
+#include "button_panel.hpp"
+
 namespace figures
 {
 
 class ColorPanel
 {
 public:
-    ColorPanel();
-    std::optional<Color> update();
+    ColorPanel(Vector2 position);
+    std::optional<Color> update() const;
 
 private:
-    struct Button
-    {
-        Button(const Rectangle& newBounds, const std::string& newName, Color newColor)
-            :bounds(newBounds), name(newName), color(newColor) {}
-
-        Rectangle bounds;
-        std::string name;
-        Color color;
-    };
-
-    std::vector<Button> buttons;
+    ButtonPanel<Color> buttons;
 };
 
 }

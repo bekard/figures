@@ -4,6 +4,7 @@
 
 #include "canvas.hpp"
 #include "color_panel.hpp"
+#include "shape_panel.hpp"
 
 namespace figures
 {
@@ -22,11 +23,12 @@ private:
 
     Canvas canvas;
     ColorPanel colorPanel;
+    ShapePanel shapePanel;
 
     struct Settings
     {
         Color color = BLACK;
-        // Shape shape;
+        ShapeType shape = ShapeType::Square;
     };
 
     Settings settings;

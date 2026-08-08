@@ -2,11 +2,14 @@
 #include "raygui.hpp"
 
 #include "app.hpp"
+#include "constants.hpp"
 
 namespace figures
 {
 
 App::App(int screenWidth, int screenHeight)
+    :colorPanel({0, 0})
+    ,shapePanel({BUTTON_WIDTH, 0})
 {
     InitWindow(screenWidth, screenHeight, "figures");
     SetTargetFPS(60);
@@ -35,11 +38,11 @@ void App::update()
         return;
     }
 
-    // if(std::optional<Shape> newShape = shapePanel.update())
-    // {
-    //     settings.shape = *newShape;
-    //     return;
-    // }
+    if(std::optional<ShapeType> newShape = shapePanel.update())
+    {
+        settings.shape = *newShape;
+        return;
+    }
 
     if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
     {
