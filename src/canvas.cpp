@@ -3,17 +3,17 @@
 namespace figures
 {
 
-void Canvas::draw()
+void Canvas::draw() const
 {
-    for(const Vector2& pos : coordinates)
+    for(const ShapePtr& figure : figures)
     {
-        DrawRectangleV(pos, {50, 50}, LIME);
+        figure->draw();
     }
 }
 
-void Canvas::add(Vector2 pos)
+void Canvas::add(ShapePtr&& shape)
 {
-    coordinates.push_back(pos);
+    figures.push_back(std::move(shape));
 }
 
 }

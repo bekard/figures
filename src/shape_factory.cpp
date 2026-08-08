@@ -7,7 +7,7 @@
 namespace figures
 {
 
-std::unique_ptr<Shape> ShapeFactory::createShape(ShapeType type, Vector2 position, Color color)
+ShapePtr ShapeFactory::create(ShapeType type, Vector2 position, Color color)
 {
     switch(type)
     {

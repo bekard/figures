@@ -1,7 +1,5 @@
 #pragma once
 
-#include <memory>
-
 #include "shape.hpp"
 
 namespace figures
@@ -9,9 +7,10 @@ namespace figures
 
 class ShapeFactory
 {
+public:
     ShapeFactory() = delete;
 
-    static std::unique_ptr<Shape> createShape(ShapeType type, Vector2 position, Color color);
+    static ShapePtr create(ShapeType type, Vector2 position, Color color);
 };
 
 }

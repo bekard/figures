@@ -1,7 +1,10 @@
 #pragma once
 
 #include <vector>
+
 #include "raylib.h"
+
+#include "shape.hpp"
 
 namespace figures
 {
@@ -11,11 +14,11 @@ class Canvas
 public:
     Canvas() = default;
 
-    void draw();
-    void add(Vector2 pos);
+    void draw() const;
+    void add(ShapePtr&& shape);
 
 private:
-    std::vector<Vector2> coordinates;
+    std::vector<ShapePtr> figures;
 };
 
 }

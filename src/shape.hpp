@@ -1,5 +1,7 @@
 #pragma once
 
+#include <memory>
+
 #include "raylib.h"
 
 namespace figures
@@ -22,5 +24,7 @@ protected:
     Vector2 position;
     Color color;
 };
+
+using ShapePtr = std::unique_ptr<Shape>;
 
 }

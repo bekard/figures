@@ -3,6 +3,7 @@
 
 #include "app.hpp"
 #include "constants.hpp"
+#include "shape_factory.hpp"
 
 namespace figures
 {
@@ -46,8 +47,9 @@ void App::update()
 
     if(IsMouseButtonReleased(MOUSE_BUTTON_LEFT))
     {
-        Vector2 pos = GetMousePosition();
-        canvas.add(pos);
+        Vector2 position = GetMousePosition();
+        ShapePtr shape = ShapeFactory::create(settings.shape, position, settings.color);
+        canvas.add(std::move(shape));
     }
 }
 
