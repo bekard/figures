@@ -24,6 +24,7 @@ private:
     Canvas canvas;
     ColorPanel colorPanel;
     ShapePanel shapePanel;
+    Vector2 clearButtonPosition;
 
     struct Settings
     {

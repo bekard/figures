@@ -16,4 +16,9 @@ void Canvas::add(ShapePtr&& shape)
     figures.push_back(std::move(shape));
 }
 
+void Canvas::clear()
+{
+    figures.clear();
+}
+
 }

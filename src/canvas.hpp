@@ -16,6 +16,7 @@ public:
 
     void draw() const;
     void add(ShapePtr&& shape);
+    void clear();
 
 private:
     std::vector<ShapePtr> figures;
